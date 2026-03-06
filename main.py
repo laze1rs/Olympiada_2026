@@ -80,7 +80,7 @@ while isWorking:
             q2, r2 = index_to_pos[index2]
             dq = abs(q2 - q1)
             dr = abs(r2 - r1)
-            return int((dq + dr) / 2)
+            return (dq + dr + 1) // 2
 
          parts = cmd.split()
          ind1 = int(parts[1])
