@@ -1,16 +1,6 @@
 #úkol 1
 isWorking = True
-
-while isWorking:
-    cmd = input()
-    if cmd == "exit":
-        isWorking = False
-    elif cmd == "get_name":
-        print("Ivan_Zakablukov")
-#úkol 2
-    if cmd.startswith("index_to_position"):
-        #dict pro index:pozice
-            index_to_pos = {0: [0, 0],
+index_to_pos = {0: [0, 0],
                         1: [0, 2],
                         2: [1, 1],
                         3: [1, -1],
@@ -71,6 +61,28 @@ while isWorking:
                         58: [-3, 5],
                         59: [-2, 6],
                         60: [-1, 7]}
+while isWorking:
+    cmd = input()
+    if cmd == "exit":
+        isWorking = False
+    elif cmd == "get_name":
+        print("Ivan_Zakablukov")
+#úkol 2
+    elif cmd.startswith("index_to_position"):
+        #dict pro index:pozice
             parts = cmd.split()
             index = int(parts[1])
             print(index_to_pos[index])
+    
+    elif cmd.startswith("distance_between"):
+         def hex_distance(index1, index2):
+            q1, r1 = index_to_pos[index1]
+            q2, r2 = index_to_pos[index2]
+            dq = abs(q2 - q1)
+            dr = abs(r2 - r1)
+            return int((dq + dr) / 2)
+
+         parts = cmd.split()
+         ind1 = int(parts[1])
+         ind2 = int(parts[2])
+         print(hex_distance(ind1, ind2))
