@@ -1,5 +1,6 @@
 #úkol 1
 isWorking = True
+#dict pro srovnaní indexu a posice v hexagonu
 index_to_pos = {0: [0, 0],
                         1: [0, 2],
                         2: [1, 1],
@@ -69,13 +70,13 @@ while isWorking:
         print("Ivan_Zakablukov")
 #úkol 2
     elif cmd.startswith("index_to_position"):
-        #dict pro index:pozice
             parts = cmd.split()
             index = int(parts[1])
             print(index_to_pos[index])
-    
+#úkol 3
     elif cmd.startswith("distance_between"):
-         def hex_distance(index1, index2):
+      #funkce pro vypočet distanci mezi 2 indexy
+      def hex_distance(index1, index2):
             q1, r1 = index_to_pos[index1]
             q2, r2 = index_to_pos[index2]
             dq = abs(q2 - q1)
